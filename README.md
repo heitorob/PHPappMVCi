@@ -47,11 +47,11 @@ php -S localhost:8000
 ```
 - Se necessário, edite os dados de conexão com MySQL no arquivo de configuração do PHP (geralmente em config/database.php), ajustando:
 ```sh
-$host = 'localhost'; // ou seu host
-$port = '3306';      // porta do MySQL
-$user = 'root';      // usuário do banco
-$password = '';      // senha do banco
-$database = 'nome_do_banco'; // nome do banco de dados
+$host = 'localhost';
+$port = '3306';
+$user = 'root';
+$password = '';
+$database = 'nome_do_banco';
 ```
 - Acesse a aplicação no seu navegador através do endereço:
 
