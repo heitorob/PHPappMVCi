@@ -3,29 +3,18 @@
 ## O que é MVC?
 
 MVC (Model-View-Controller) é um padrão de arquitetura de software que separa a aplicação em três componentes principais:
-- Model (Modelo): Responsável pela lógica de negócios e manipulação de dados
-- View (Visualização): Responsável pela apresentação dos dados e interface com o usuário
-- Controller (Controlador): Intermediário que processa as requisições do usuário, manipula o modelo e atualiza a view
+- Model (Modelo): Responsável pela lógica de negócios e manipulação de dados;
+- View (Visualização): Responsável pela apresentação dos dados e interface com o usuário;
+- Controller (Controlador): Intermediário que processa as requisições do usuário, manipula o modelo e atualiza a view.
 
 ## Benefícios do MVC
 
-### Separação de preocupações
-Cada componente tem uma responsabilidade bem definida.
-
-### Manutenibilidade:
-Facilita a manutenção e atualização do código.
-
-### Reutilização de código:
-Componentes podem ser reutilizados em diferentes partes da aplicação.
-
-### Testabilidade:
-Isolamento dos componentes facilita a criação de testes automatizados.
-
-### Trabalho em equipe:
-Diferentes desenvolvedores podem trabalhar em componentes distintos simultaneamente.
-
-### Escalabilidade:
-Estrutura organizada permite crescimento sustentável da aplicação.
+- Separação de preocupações: Cada componente tem uma responsabilidade bem definida;
+- Manutenibilidade: Facilita a manutenção e atualização do código;
+- Reutilização de código: Componentes podem ser reutilizados em diferentes partes da aplicação;
+- Testabilidade: Isolamento dos componentes facilita a criação de testes automatizados;
+- Trabalho em equipe: Diferentes desenvolvedores podem trabalhar em componentes distintos simultaneamente;
+- Escalabilidade: Estrutura organizada permite crescimento sustentável da aplicação.
 
 
 ## Como o MVC funciona no fluxo da aplicação
