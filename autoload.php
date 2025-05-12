@@ -8,7 +8,7 @@
         }
         else
         {
-            throw new Exception("Arquivo não encontrado.");
+            throw new Exception("Arquivo não encontrado. Você é um bosta!");
         }
     });
 ?>

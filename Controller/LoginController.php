@@ -15,7 +15,7 @@
                 $model->Email = $_POST['email'];
                 $model->Senha = $_POST['senha'];
 
-                $model = $model->logar();
+                $model = $model->fazerLogin();
 
                 if($model !== null)
                 {
@@ -41,7 +41,7 @@
             if(isset($_COOKIE['sistema_biblioteca_usuario']))
                 $model->Email = $_COOKIE['sistema_biblioteca_usuario'];
 
-            include VIEWS . '/Login/form_login.php';
+            include 'View/Login/form_login.php';
         }
 
         public static function logout() : void
