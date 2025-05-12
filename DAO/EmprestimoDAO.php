@@ -59,7 +59,7 @@
             return $stmt->fetchObject("PHPappMVCi\Model\Emprestimo");
         }
 
-        public function select() : arid_alunoy
+        public function select() : array
         {
             $sql = "SELECT * FROM emprestimo ";
 
