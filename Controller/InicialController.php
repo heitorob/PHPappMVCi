@@ -7,7 +7,7 @@
         {
             parent::isProtected();
 
-            include VIEWS . '/Inicial/home.php';
+            include '/View/Inicial/home.php';
         }
     }
 ?>

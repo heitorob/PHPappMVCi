@@ -8,7 +8,8 @@
         EmprestimoController,
         InicialController,
         LivroController,
-        LoginController
+        LoginController,
+        UsuarioController
     };
 
     $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -25,6 +26,18 @@
 
         case '/logout':
             InicialController::logout();
+        break;
+
+        case '/usuario':
+            UsuarioController::index();
+        break;
+
+        case '/usuario/cadastro':
+            UsuarioController::cadastro();
+        break;
+
+        case '/usuario/delete':
+            UsuarioController::delete();
         break;
 
         case '/aluno':
