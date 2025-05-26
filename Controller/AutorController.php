@@ -4,7 +4,7 @@
     use PHPappMVCi\Model\Autor;
     use Exception;
 
-    final class AutorConrtoller extends Controller
+    final class AutorController extends Controller
     {
         public static function index() : void
         {
@@ -25,7 +25,7 @@
             parent::render('Autor/lista_autor.php', $model);
         }
 
-        public static function cadasrto() : void
+        public static function cadastro() : void
         {
             parent::isProtected();
 

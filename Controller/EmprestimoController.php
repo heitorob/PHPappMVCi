@@ -4,7 +4,7 @@
     use PHPappMVCi\Model\{ Emprestimo, Aluno, Livro };
     use Exception;
 
-    final class EmprestimoConrtoller extends Controller
+    final class EmprestimoController extends Controller
     {
         public static function index() : void
         {
@@ -25,7 +25,7 @@
             parent::render('Emprestimo/lista_emprestimo.php', $model);
         }
 
-        public static function cadasrto() : void
+        public static function cadastro() : void
         {
             parent::isProtected();
 

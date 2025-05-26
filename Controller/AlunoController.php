@@ -4,7 +4,7 @@
     use PHPappMVCi\Model\Aluno;
     use Exception;
 
-    final class AlunoConrtoller extends Controller
+    final class AlunoController extends Controller
     {
         public static function index() : void
         {
@@ -25,7 +25,7 @@
             parent::render('Aluno/lista_aluno.php', $model);
         }
 
-        public static function cadasrto() : void
+        public static function cadastro() : void
         {
             parent::isProtected();
 

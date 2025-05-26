@@ -4,7 +4,7 @@
     use PHPappMVCi\Model\{ Livro, Categoria, Autor };
     use Exception;
 
-    final class LivroConrtoller extends Controller
+    final class LivroController extends Controller
     {
         public static function index() : void
         {
@@ -25,7 +25,7 @@
             parent::render('Livro/lista_livro.php', $model);
         }
 
-        public static function cadasrto() : void
+        public static function cadastro() : void
         {
             parent::isProtected();
 

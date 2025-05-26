@@ -4,7 +4,7 @@
     use PHPappMVCi\Model\Categoria;
     use Exception;
 
-    final class CategoriaConrtoller extends Controller
+    final class CategoriaController extends Controller
     {
         public static function index() : void
         {
@@ -25,7 +25,7 @@
             parent::render('Categoria/lista_categoria.php', $model);
         }
 
-        public static function cadasrto() : void
+        public static function cadastro() : void
         {
             parent::isProtected();
 

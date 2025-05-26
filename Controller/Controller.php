@@ -13,7 +13,7 @@
 
         final protected static function render(string $view, ?Model $model) : void
         {
-            include VIEWS . "/$view";
+            include "View/$view";
         }
 
         final protected static function isPost() : bool

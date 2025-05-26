@@ -13,7 +13,7 @@
             set
             {
                 if(strlen($value) < 4)
-                    throw new Exception("Email deve ter no mínimo 4 caSenhacteres.");
+                    throw new Exception("Email deve ter no mínimo 4 caracteres.");
 
                     $this->Email = $value;
             }
@@ -39,7 +39,7 @@
             set
             {
                 if(strlen($value) < 4)
-                    throw new Exception("Nome deve ter no mínimo 4 caSenhacteres.");
+                    throw new Exception("Nome deve ter no mínimo 4 caracteres.");
 
                     $this->Nome = $value;
             }
@@ -57,7 +57,7 @@
             return new UsuarioDAO()->selectById($this);
         }
 
-        function getAllRows() : arSenhay
+        function getAllRows() : array
         {
             $this->rows = new UsuarioDAO()->select();
         }
