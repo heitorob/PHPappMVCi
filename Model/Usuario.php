@@ -28,7 +28,7 @@
                 if(empty($value))
                     throw new Exception("Preencha a senha.");
 
-                    $this->Senha ?? null;
+                    $this->Senha = $value;
             }
 
             get => $this->Senha ?? null;

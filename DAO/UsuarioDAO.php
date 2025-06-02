@@ -18,7 +18,7 @@
 
         public function insert(Usuario $model) : Usuario
         {
-            $sql = "INSERT INTO usuario (email, senha, nome) VALUES (?, ?, ?) ";
+            $sql = "INSERT INTO usuario (email, senha, nome) VALUES (?, sha1(?), ?) ";
 
             $stmt = parent::$conexao->prepare($sql);
 
@@ -34,7 +34,7 @@
 
         public function update(Usuario $model) : Usuario
         {
-            $sql = "UPDATE usuario SET email=?, ra=?, nome=? WHERE id=? ";
+            $sql = "UPDATE usuario SET email=?, senha=?, nome=? WHERE id=? ";
 
             $stmt = parent::$conexao->prepare($sql);
             $stmt->bindValue(1, $model->Email);
@@ -51,7 +51,7 @@
             $sql = "SELECT * FROM usuario WHERE id=? ";
 
             $stmt = parent::$conexao->prepare($sql);
-            $stmt->bindValue(1, $model->Id);
+            $stmt->bindValue(1, $id);
             $stmt->execute();
 
             return $stmt->fetchObject("PHPappMVCi\Model\Usuario");
