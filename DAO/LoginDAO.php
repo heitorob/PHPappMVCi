@@ -14,7 +14,7 @@
             $stmt->bindValue(2, $model->Senha);
             $stmt->execute();
 
-            $model = $stmt->fetchObject("App\Model\Login");
+            $model = $stmt->fetchObject("PHPappMVCi\Model\Login\Model\Login");
 
             return is_object($model) ? $model : null;
         }

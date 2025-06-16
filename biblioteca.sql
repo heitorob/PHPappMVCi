@@ -3,7 +3,7 @@ use biblioteca;
 
 create table if not exists usuario(
     Id int auto_increment primary key,
-    Email varchar(60) not null,
+    Email varchar(60) not null unique,
     Senha varchar(100) not null,
     Nome varchar(50)
 );

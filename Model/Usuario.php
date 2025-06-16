@@ -1,70 +1,61 @@
 <?php
-    namespace PHPappMVCi\Model;
+namespace PHPappMVCi\Model;
 
-    use PHPappMVCi\DAO\UsuarioDAO;
-    use Exception;
+use PHPappMVCi\DAO\UsuarioDAO;
+use Exception;
 
-    final class Usuario extends Model
+final class Usuario extends Model
+{
+    public ?int $Id = null;
+    public ?string $Email = null;
+    public ?string $Senha = null;
+    public ?string $Nome = null;
+
+    public function setEmail(string $email): void
     {
-        public ?int $Id = null;
-
-        public ?string $Email
-        {
-            set
-            {
-                if(strlen($value) < 4)
-                    throw new Exception("Email deve ter no mínimo 4 caracteres.");
-
-                    $this->Email = $value;
-            }
-
-            get => $this->Email ?? null;
+        if (strlen($email) < 4) {
+            throw new Exception("Email deve ter no mínimo 4 caracteres.");
         }
 
-        public ?string $Senha
-        {
-            set
-            {
-                if(empty($value))
-                    throw new Exception("Preencha a senha.");
-
-                    $this->Senha = $value;
-            }
-
-            get => $this->Senha ?? null;
-        }
-
-        public ?string $Nome
-        {
-            set
-            {
-                if(strlen($value) < 4)
-                    throw new Exception("Nome deve ter no mínimo 4 caracteres.");
-
-                    $this->Nome = $value;
-            }
-
-            get => $this->Nome ?? null;
-        }
-
-        function save() : Usuario
-        {
-            return new UsuarioDAO()->save($this);
-        }
-
-        function getById(int $id) : ?Usuario
-        {
-            return new UsuarioDAO()->selectById($this);
-        }
-
-        function getAllRows() : array
-        {
-            $this->rows = new UsuarioDAO()->select();
-        }
-
-        function delete(int $id) : bool
-        {
-            return new UsuarioDAO()->delete($id);
-        }
+        $this->Email = $email;
     }
+
+    public function setSenha(string $senha): void
+    {
+        if (empty($senha)) {
+            throw new Exception("Preencha a senha.");
+        }
+
+        $this->Senha = $senha;
+    }
+
+    public function setNome(string $nome): void
+    {
+        if (strlen($nome) < 4) {
+            throw new Exception("Nome deve ter no mínimo 4 caracteres.");
+        }
+
+        $this->Nome = $nome;
+    }
+
+    public function save(): Usuario
+    {
+        return (new UsuarioDAO())->save($this);
+    }
+
+    public function getById(int $id): ?Usuario
+    {
+        return (new UsuarioDAO())->selectById($id);
+    }
+
+    public function getAllRows(): array
+    {
+        return (new UsuarioDAO())->select();
+    }
+
+    public function delete(int $id): bool
+    {
+        return (new UsuarioDAO())->delete($id);
+    }
+}
 ?>
