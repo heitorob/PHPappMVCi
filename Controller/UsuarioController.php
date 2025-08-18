@@ -5,65 +5,74 @@ use PHPappMVCi\Model\Usuario;
 use Exception;
 
 final class UsuarioController extends Controller
-{
-    public static function index(): void
     {
-        parent::isProtected();
+        // public static function index() : void
+        // {
+        //     parent::isProtected(); 
 
-        $model = new Usuario();
+        //     $model_usuario = new Usuario();
+            
+        //     try {
+        //         $model_usuario->getAllRows();
+    
+        //     } catch(Exception $e) {
+        //         $model_usuario->setError("Ocorreu um erro ao buscar os autores: ");
+        //         $model_usuario->setError($e->getMessage());
+        //     }
+    
+        //     parent::render('Autor/lista_autor.php', $model_usuario); 
 
-        try {
-            $usuarios = $model->getAllRows();
-            $model->rows = $usuarios;
-        } catch (Exception $e) {
-            $model->setError("Ocorreu um erro ao buscar os usuários: " . $e->getMessage());
-        }
-
-        parent::render('Usuario/lista_usuario.php', $model);
-    }
-
-    public static function cadastro(): void
-    {
-        // parent::isProtected();
-
-        $model = new Usuario();
-
-        try {
-            if (parent::isPost()) {
-                $model->Id = !empty($_POST['id']) ? (int) $_POST['id'] : null;
-                $model->setEmail($_POST['email']);
-                $model->setSenha($_POST['senha']);
-                $model->setNome($_POST['nome']);
-
-                $model->save();
-                parent::redirect("/login");
-            } elseif (isset($_GET['id'])) {
-                $model = $model->getById((int) $_GET['id']);
+        // }
+        public static function cadastro() : void
+        {
+            //parent::isProtected(); 
+    
+            $model_usuario = new Usuario();
+            
+            try
+            {
+                if(parent::isPost())
+                {
+                    $model_usuario->Id = !empty($_POST['id']) ? $_POST['id'] : null;
+                    $model_usuario->nome = $_POST['nome'];
+                    $model_usuario->email= $_POST['email'];
+                    $model_usuario->senha = $_POST['senha'];
+                    $model_usuario->save();
+    
+                    parent::redirect("/usuario");
+    
+                } else {
+        
+                    if(isset($_GET['id']))
+                    {              
+                        $model_usuario = $model_usuario->getById( (int) $_GET['id'] );
+                    }
+                }
+    
+            } catch(Exception $e) {
+    
+                $model_usuario->setError($e->getMessage());
             }
-        } catch (Exception $e) {
-            $model->setError($e->getMessage());
+    
+            parent::render('Usuario/form_usuario.php', $model_usuario);        
         }
-
-        parent::render('Usuario/form_usuario.php', $model);
-    }
-
-    public static function delete(): void
-    {
-        parent::isProtected();
-
-        $model = new Usuario();
-
-        try {
-            if (!isset($_GET['id'])) {
-                throw new Exception("ID não informado.");
-            }
-
-            $model->delete((int) $_GET['id']);
-            parent::redirect("/usuario");
-        } catch (Exception $e) {
-            $model->setError("Erro ao excluir o usuário: " . $e->getMessage());
-            parent::render('Usuario/form_usuario.php', $model);
+    
+        public static function delete() : void
+        {
+            parent::isProtected(); 
+    
+            $model_usuario = new Usuario();
+            
+            try 
+            {
+                $model_usuario->delete( (int) $_GET['id']);
+                parent::redirect("/Autor");
+    
+            } catch(Exception $e) {
+                $model_usuario->setError("Ocorreu um erro ao excluir o autor:");
+                $model_usuario->setError($e->getMessage());
+            } 
+            
+            parent::render('Autor/lista_autores.php', $model_usuario);  
         }
     }
-}
-?>
