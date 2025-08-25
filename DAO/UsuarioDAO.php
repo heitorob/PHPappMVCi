@@ -15,7 +15,7 @@ final class UsuarioDAO extends DAO{
     }
 
     public function insert(Usuario $model_usuario) : Usuario{
-        $sql = "INSERT INTO usuario (nome, email, senha) VALUES (?,?,sha1(?)) ";
+        $sql = "INSERT INTO usuario (nome, email, senha) VALUES (?,?,?) ";
         $stmt = parent::$conexao->prepare($sql);
 
         $stmt->bindValue(1, $model_usuario->nome);
@@ -30,7 +30,7 @@ final class UsuarioDAO extends DAO{
     }
 
     public function update(Usuario $model_usuario) : Usuario{
-        $sql = "UPDATE Usuario SET nome=?, email=?, senha=sha1(?) WHERE id=? ";
+        $sql = "UPDATE Usuario SET nome=?, email=?, senha=? WHERE id=? ";
         $stmt = parent::$conexao->prepare($sql);
 
         $stmt->bindValue(1, $model_usuario->nome);

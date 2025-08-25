@@ -28,7 +28,7 @@
                 if(empty($value))
                     throw new Exception("Preencha o RA.");
 
-                    $this->RA ?? null;
+                    $this->RA = $value;
             }
 
             get => $this->RA ?? null;
@@ -59,7 +59,7 @@
 
         function getAllRows() : array
         {
-            $this->rows = new AlunoDAO()->select();
+            return $this->rows = new AlunoDAO()->select();
         }
 
         function delete(int $id) : bool

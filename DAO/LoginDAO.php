@@ -7,14 +7,14 @@
     {
         public function autenticar(Login $model) : ?Login
         {
-            $sql = "SELECT * FROM usuario WHERE email=? AND senha=sha1(?) ";
+            $sql = "SELECT * FROM usuario WHERE email=? AND senha=? ";
         
             $stmt = parent::$conexao->prepare($sql);
             $stmt->bindValue(1, $model->Email);
             $stmt->bindValue(2, $model->Senha);
             $stmt->execute();
 
-            $model = $stmt->fetchObject("PHPappMVCi\Model\Login\Model\Login");
+            $model = $stmt->fetchObject("PHPappMVCi\Model\Login");
 
             return is_object($model) ? $model : null;
         }

@@ -16,16 +16,16 @@
             <input name="id" type="hidden" value="<?= $model->Id ?>" />
 
             <div class="mb-3">
+                <label for="nome" class="form-label">Nome:</label>
+                <input type="text" value="<?= $model->Nome ?>" class="form-control" name="nome" id="nome">
+            </div>
+            <div class="mb-3">
                 <label for="email" class="form-label">E-Mail:</label>
                 <input type="email" value="<?= $model->Email ?>" class="form-control" name="email" id="email">
             </div>
             <div class="mb-3">
                 <label for="senha" class="form-label">Senha:</label>
                 <input type="password" value="<?= $model->Senha ?>" class="form-control" name="senha" id="senha">
-            </div>
-            <div class="mb-3">
-                <label for="nome" class="form-label">Nome:</label>
-                <input type="text" value="<?= $model->Nome ?>" class="form-control" name="nome" id="nome">
             </div>
             <button type="submit" class="btn btn-success">Salvar</button>
         </form>

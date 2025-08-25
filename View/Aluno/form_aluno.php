@@ -8,7 +8,7 @@
 </head>
 <body>
     <div>
-        <?php include '/View/Includes/menu.php'?>
+        <?php include VIEWS . '/Includes/menu.php'?>
 
         <h1>Cadastro de Aluno</h1>
 
