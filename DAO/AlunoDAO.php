@@ -51,7 +51,7 @@
             $sql = "SELECT * FROM aluno WHERE id=? ";
 
             $stmt = parent::$conexao->prepare($sql);
-            $stmt->bindValue(1, $model->Id);
+            $stmt->bindValue(1, $id);
             $stmt->execute();
 
             return $stmt->fetchObject("PHPappMVCi\Model\Aluno");
@@ -69,10 +69,10 @@
 
         public function delete(int $id) : bool
         {
-            $sql = "DELETE FROM alunos WHERE id=? ";
+            $sql = "DELETE FROM aluno WHERE id=? ";
 
             $stmt = parent::$conexao->prepare($sql);
-            $stmt->bindValue(1, $model->Id);
+            $stmt->bindValue(1, $id);
             return $stmt->execute();
         }
     }
