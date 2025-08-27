@@ -39,7 +39,7 @@ final class UsuarioController extends Controller
                     $model_usuario->senha = $_POST['senha'];
                     $model_usuario->save();
     
-                    parent::redirect("/usuario");
+                    parent::redirect("/");
     
                 } else {
         

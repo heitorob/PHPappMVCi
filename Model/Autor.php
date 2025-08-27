@@ -59,7 +59,7 @@
 
         function getAllRows() : array
         {
-            $this->rows = new AutorDAO()->select();
+            return $this->rows = new AutorDAO()->select();
         }
 
         function delete(int $id) : bool

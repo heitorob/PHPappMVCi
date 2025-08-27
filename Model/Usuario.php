@@ -9,32 +9,32 @@ use Exception;
 final class Usuario extends Model{
     public ?int $Id = null;
 
-    public ?string $nome {
+    public ?string $Nome {
         set{
             if(strlen($value) < 3)
                 throw new Exception("Nome deve ter no minimo 3 caracteres");
 
-                $this->nome = $value;
-        } get => $this->nome ?? null;
+                $this->Nome = $value;
+        } get => $this->Mome ?? null;
     }
 
     
-    public ?string $email {
+    public ?string $Email {
         set{
             if(strlen($value) < 3)
                 throw new Exception("Email deve ter no minimo 11 caracteres");
 
-                $this->email = $value;
-        } get => $this->email ?? null;
+                $this->Email = $value;
+        } get => $this->Email ?? null;
     }
     
-    public ?string $senha {
+    public ?string $Senha {
         set{
             if(strlen($value) < 3)
-                throw new Exception("senha deve ter no minimo 4 caracteres");
+                throw new Exception("Senha deve ter no minimo 4 caracteres");
 
-                $this->senha = $value;
-        } get => $this->senha ?? null;
+                $this->Senha = $value;
+        } get => $this->Senha ?? null;
     }
 
 
