@@ -28,7 +28,7 @@
 
         function getById(int $id) : ?Categoria
         {
-            return new CategoriaDAO()->selectById($this);
+            return new CategoriaDAO()->selectById($id);
         }
 
         function getAllRows() : array

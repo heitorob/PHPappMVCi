@@ -47,7 +47,7 @@
             $sql = "SELECT * FROM categoria WHERE id=? ";
 
             $stmt = parent::$conexao->prepare($sql);
-            $stmt->bindValue(1, $model->Id);
+            $stmt->bindValue(1, $id);
             $stmt->execute();
 
             return $stmt->fetchObject("PHPappMVCi\Model\Categoria");
@@ -65,10 +65,10 @@
 
         public function delete(int $id) : bool
         {
-            $sql = "DELETE FROM categorias WHERE id=? ";
+            $sql = "DELETE FROM categoria WHERE id=? ";
 
             $stmt = parent::$conexao->prepare($sql);
-            $stmt->bindValue(1, $model->Id);
+            $stmt->bindValue(1, $id);
             return $stmt->execute();
         }
     }

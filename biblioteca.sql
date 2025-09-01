@@ -46,8 +46,8 @@ PRIMARY KEY(Id)
 CREATE TABLE Livro_Autor_Assoc (
 Id_Livro int not null,
 Id_Autor int not null,
-FOREIGN KEY(Id_Livro) REFERENCES Livro (Id),
-FOREIGN KEY(Id_Autor) REFERENCES Autor (Id),
+FOREIGN KEY(Id_Livro) REFERENCES Livro (Id) ON DELETE CASCADE, #faz o banco apagar registros que não existem; evita inconsistências.
+FOREIGN KEY(Id_Autor) REFERENCES Autor (Id) ON DELETE CASCADE,
 PRIMARY KEY(Id_Livro, Id_Autor)
 );
 
