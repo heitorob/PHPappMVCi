@@ -21,7 +21,9 @@
                 <tr>
                     <th scope="col">Id</th>
                     <th scope="col">Nome</th>
+                    <th scope="col">RA</th>
                     <th scope="col">Curso</th>
+                    <th scope="col"> </th>
                 </tr>
             </thead>
             <tbody>
@@ -29,6 +31,7 @@
                 <tr>
                     <td><?= $aluno->Id ?></td>
                     <td><a href="/aluno/cadastro?id=<?= $aluno->Id ?>"><?= $aluno->Nome ?></a> </td>
+                    <td><?= $aluno->RA ?></td>
                     <td><?= $aluno->Curso ?></td>
                     <td><a href="/aluno/delete?id=<?= $aluno->Id ?>">Remover</a> </td>
                 </tr>

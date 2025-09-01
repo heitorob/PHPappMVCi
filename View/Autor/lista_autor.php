@@ -23,6 +23,7 @@
                     <th scope="col">Nome</th>
                     <th scope="col">Data de Nascimento</th>
                     <th scope="col">CPF</th>
+                    <th scope="col"> </th>
                 </tr>
             </thead>
             <tbody>
