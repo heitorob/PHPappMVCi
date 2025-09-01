@@ -33,7 +33,7 @@
 
         function getAllRows() : array
         {
-            $this->rows = new CategoriaDAO()->select();
+            return $this->rows = new CategoriaDAO()->select();
         }
 
         function delete(int $id) : bool

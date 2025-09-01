@@ -51,7 +51,7 @@
             $sql = "SELECT * FROM autor WHERE id=? ";
 
             $stmt = parent::$conexao->prepare($sql);
-            $stmt->bindValue(1, $model->Id);
+            $stmt->bindValue(1, $id);
             $stmt->execute();
 
             return $stmt->fetchObject("PHPappMVCi\Model\Autor");
@@ -69,10 +69,10 @@
 
         public function delete(int $id) : bool
         {
-            $sql = "DELETE FROM autors WHERE id=? ";
+            $sql = "DELETE FROM autor WHERE id=? ";
 
             $stmt = parent::$conexao->prepare($sql);
-            $stmt->bindValue(1, $model->Id);
+            $stmt->bindValue(1, $id);
             return $stmt->execute();
         }
     }

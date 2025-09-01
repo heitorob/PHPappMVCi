@@ -28,7 +28,7 @@
                 if(empty($value))
                     throw new Exception("Preencha a data de nascimento.");
 
-                    $this->Nascimento ?? null;
+                    $this->Nascimento = $value;
             }
 
             get => $this->Nascimento ?? null;
@@ -38,7 +38,7 @@
         {
             set
             {
-                if(strlen($value) < 11)
+                if(strlen($value) != 11)
                     throw new Exception("Preencha o CPF corretamente.");
 
                     $this->CPF = $value;
@@ -54,7 +54,7 @@
 
         function getById(int $id) : ?Autor
         {
-            return new AutorDAO()->selectById($this);
+            return new AutorDAO()->selectById($id);
         }
 
         function getAllRows() : array

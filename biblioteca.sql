@@ -5,7 +5,7 @@ use biblioteca_do_butao;
 CREATE TABLE Autor (
 Id int auto_increment,
 Nome Varchar(255) not null,
-Data_Nascimento Date not null,
+Nascimento Date not null,
 CPF Char(11) not null,
 PRIMARY KEY(Id)
 );
